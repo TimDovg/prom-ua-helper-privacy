@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Политика конфиденциальности Prom.ua Helper</title>
+    <meta
+      name="description"
+      content="Политика конфиденциальности расширения Chrome Prom.ua Helper."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f7fb;
+        --panel: #ffffff;
+        --text: #1d2433;
+        --muted: #5f6b7a;
+        --accent: #6d3df4;
+        --border: #dfe4ec;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+      }
+
+      main {
+        width: min(920px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 48px 0;
+      }
+
+      article {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 40px;
+        box-shadow: 0 18px 45px rgba(29, 36, 51, 0.08);
+      }
+
+      h1,
+      h2 {
+        line-height: 1.2;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: clamp(30px, 5vw, 44px);
+      }
+
+      h2 {
+        margin: 32px 0 12px;
+        font-size: 22px;
+      }
+
+      p {
+        margin: 0 0 16px;
+      }
+
+      ul {
+        margin: 0 0 16px;
+        padding-left: 22px;
+      }
+
+      li {
+        margin: 7px 0;
+      }
+
+      code {
+        padding: 2px 5px;
+        border-radius: 5px;
+        background: #f0edf9;
+        color: #4e25b8;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: 0.95em;
+      }
+
+      a {
+        color: var(--accent);
+      }
+
+      .date {
+        color: var(--muted);
+        margin-bottom: 24px;
+      }
+
+      @media (max-width: 640px) {
+        main {
+          width: min(100% - 20px, 920px);
+          padding: 24px 0;
+        }
+
+        article {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article>
+        <h1>Политика конфиденциальности Prom.ua Helper</h1>
+        <p class="date">Дата обновления: 2 июля 2026 г.</p>
+
+        <p>
+          Prom.ua Helper помогает продавцам Prom.ua проверять и обновлять истекшие скидки товаров
+          через Telegram-бота и backend-сервис. Расширение Chrome используется как удобная панель
+          управления и подключается к Telegram-профилю пользователя через одноразовый код.
+        </p>
+
+        <h2>Какие данные мы собираем</h2>
+        <p>Сервис может обрабатывать следующие данные:</p>
+        <ul>
+          <li>Telegram user id, chat id, username, имя и фамилию, если они передаются Telegram.</li>
+          <li>Prom.ua API-токен, который пользователь самостоятельно отправляет Telegram-боту.</li>
+          <li>
+            Технические данные подключения расширения: session token, pairing token, код подключения,
+            срок действия кода и id текущей задачи.
+          </li>
+          <li>
+            Данные задач по товарам Prom.ua: id товара, название товара, текущая дата окончания
+            скидки, новая дата окончания скидки, статус обработки и текст ошибки, если она возникла.
+          </li>
+          <li>Технические логи выполнения команд, чтобы пользователь видел результат проверки или обновления.</li>
+        </ul>
+
+        <h2>Как мы используем данные</h2>
+        <p>Данные используются только для основной функции сервиса:</p>
+        <ul>
+          <li>подключения расширения Chrome к Telegram-профилю пользователя;</li>
+          <li>проверки наличия сохраненного Prom.ua API-токена;</li>
+          <li>поиска товаров с истекшей скидкой;</li>
+          <li>предпросмотра изменений перед применением;</li>
+          <li>обновления даты окончания скидки после подтверждения пользователя;</li>
+          <li>показа статуса и результата выполнения задачи.</li>
+        </ul>
+        <p>
+          Мы не используем данные для рекламы, продажи, кредитного скоринга, определения
+          платежеспособности или целей, не связанных с работой Prom.ua Helper.
+        </p>
+
+        <h2>Где хранятся данные</h2>
+        <p>
+          Расширение Chrome хранит в <code>chrome.storage.local</code> только техническое состояние
+          подключения: session token, pairing token, код подключения и id текущей задачи. Prom.ua
+          API-токен, пароли и данные товаров в браузере не сохраняются.
+        </p>
+        <p>
+          Backend-сервис хранит данные в Supabase. Prom.ua API-токен хранится только на backend в
+          зашифрованном виде и не помещается в исходный код, frontend-код, расширение Chrome или
+          Local Storage сайта.
+        </p>
+
+        <h2>Передача данных третьим сторонам</h2>
+        <p>Данные передаются только сервисам, необходимым для работы Prom.ua Helper:</p>
+        <ul>
+          <li>Telegram используется для общения с ботом и получения команд пользователя.</li>
+          <li>Supabase используется для хранения данных и выполнения backend-функций.</li>
+          <li>
+            Prom.ua Public API используется для получения товаров и обновления скидок по API-токену
+            пользователя.
+          </li>
+        </ul>
+        <p>Мы не продаем пользовательские данные и не передаем их третьим лицам для рекламы или маркетинга.</p>
+
+        <h2>Доступ к сайтам и браузеру</h2>
+        <p>
+          Расширение не читает историю браузера, не отслеживает клики, движения мыши, нажатия клавиш
+          или прокрутку страниц. Расширение не читает содержимое сайтов и не изменяет страницы Prom.ua.
+        </p>
+        <p>
+          Разрешение на доступ к хосту Supabase используется только для HTTPS-запросов popup
+          расширения к backend API Prom.ua Helper.
+        </p>
+
+        <h2>Удаление данных</h2>
+        <p>
+          Пользователь может удалить сохраненный Prom.ua API-токен командой <code>/delete_token</code>
+          в Telegram-боте. После удаления токена сервис больше не сможет выполнять проверки и
+          обновления товаров Prom.ua для этого пользователя, пока пользователь снова не добавит токен.
+        </p>
+        <p>Пользователь также может отключить расширение от своего Telegram-профиля через интерфейс расширения.</p>
+
+        <h2>Безопасность</h2>
+        <p>
+          Мы применяем разделение между расширением Chrome и backend-сервисом: секретные данные не
+          хранятся в расширении и не передаются в frontend-код. Prom.ua API-токен хранится на backend
+          в зашифрованном виде.
+        </p>
+
+        <h2>Контакты</h2>
+        <p>
+          По вопросам конфиденциальности можно обратиться через Telegram-бота
+          <a href="https://t.me/prom_ua_helper_bot">@prom_ua_helper_bot</a>.
+        </p>
+      </article>
+    </main>
+  </body>
+</html>
